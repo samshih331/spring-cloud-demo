@@ -1,0 +1,16 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: order-service
+
+eureka:
+  client:
+    # 將自己註冊到eureka server
+    register-with-eureka: true
+    # 從eureka索取註冊的服務
+    fetch-registry: true
+    service-url:
+#      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka.com:7001/eureka,http://eureka2.com:7002/eureka
