@@ -16,6 +16,8 @@
 		<module>eureka-server</module>
 		<module>eureka-server-2</module>
 		<module>payment2</module>
+		<module>payment3</module>
+		<module>consumer-zk-order</module>
 	</modules>
 
 	<!--	統一管理jar版本-->
