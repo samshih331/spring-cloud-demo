@@ -18,11 +18,16 @@ eureka:
     # 從eureka索取註冊的服務
     fetch-registry: true
     service-url:
-#      defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka.com:7001/eureka,http://eureka2.com:7002/eureka
+      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://eureka.com:7001/eureka,http://eureka2.com:7002/eureka
   instance:
     instance-id: payment1
     prefer-ip-address: true
+    # client端向server端發送心跳的間隔
+    lease-renewal-interval-in-seconds: 1
+    # server端收到最後一次心跳後，等待下次心跳的時間上限，超時將剔除服務。
+    lease-expiration-duration-in-seconds: 2
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

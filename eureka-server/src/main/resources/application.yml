@@ -10,7 +10,12 @@ eureka:
     fetch-registry: false
     service-url:
       # 配置與eureka server進行服務查詢及服務註冊等溝通的地址
-      defaultZone: http://eureka2.com:7002/eureka/
+      #      defaultZone: http://eureka2.com:7002/eureka/
+      defaultZone: http://eureka.com:7001/eureka/
+  server:
+    # 是否開啟自我保護機制，服務超時是否要及時剔除。
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
 
 
 
