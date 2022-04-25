@@ -18,6 +18,8 @@
 		<module>payment2</module>
 		<module>payment3</module>
 		<module>consumer-zk-order</module>
+		<module>payment-consul</module>
+		<module>consumer-consul-order</module>
 	</modules>
 
 	<!--	統一管理jar版本-->
