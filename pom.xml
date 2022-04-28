@@ -20,6 +20,7 @@
 		<module>consumer-zk-order</module>
 		<module>payment-consul</module>
 		<module>consumer-consul-order</module>
+		<module>consumer-feign-order</module>
 	</modules>
 
 	<!--	統一管理jar版本-->

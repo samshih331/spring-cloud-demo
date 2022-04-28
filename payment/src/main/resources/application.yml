@@ -18,8 +18,8 @@ eureka:
     # 從eureka索取註冊的服務
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
-#      defaultZone: http://eureka.com:7001/eureka,http://eureka2.com:7002/eureka
+#      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka.com:7001/eureka,http://eureka2.com:7002/eureka
   instance:
     instance-id: payment1
     prefer-ip-address: true
