@@ -21,6 +21,8 @@
 		<module>payment-consul</module>
 		<module>consumer-consul-order</module>
 		<module>consumer-feign-order</module>
+		<module>payment-hystrix</module>
+		<module>consumer-feign-hystrix-order</module>
 	</modules>
 
 	<!--	統一管理jar版本-->
