@@ -2,6 +2,8 @@ package com.samshih.springcloud.controller;
 
 import javax.annotation.Resource;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.samshih.springcloud.service.PaymentHystrixService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +25,18 @@ public class OrderHystrixController {
 	}
 
 	@GetMapping("/consumer/payment/hystrix/timeout/{id}")
+	@HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod", commandProperties = {
+		@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
+	})
 	String paymentInfo_TimeOut(
 		@PathVariable("id")
 		Integer id) {
 		return paymentHystrixService.paymentInfo_TimeOut(id);
+	}
+
+	public String paymentTimeOutFallbackMethod(
+		@PathVariable("id")
+		Integer id) {
+		return "payment service is busy or error happened";
 	}
 }
